@@ -3,32 +3,43 @@ public class RockPaperScissor
 {
 	public static void main(String[] args) {
 	    Scanner sc=new Scanner(System.in);
+	    System.out.println("How many times do you want to play this game?");
+	    int n=sc.nextInt();
+	    int count1=0;
+	    int count2=0;
+	    for(int i=0;i<n;i++){
 	    char p1=sc.next().charAt(0);
 	   // System.out.println("p1");
 	    char p2=sc.next().charAt(0);
 // 		System.out.println("p2");
 		if(p1=='R' && p2=='S'){
-		    System.out.println("person1 Wins");
+		   count1++;
 		} else if(p1=='S' && p2=='R'){
-		    System.out.println("person2 Wins");
+		   count2++;
 		}
 		else if(p1=='S' && p2=='P'){
-		    System.out.println("person1 Wins");
+		  count1++;
 		}
 		else if(p1=='P' && p2=='S'){
-		    System.out.println("person2 Wins");
-		}
-		else if(p1=='R' && p2=='R'){
-		    System.out.println("person2 Wins");
+		   count2++;
 		}
 		else if(p1=='P' && p2=='R'){
-		    System.out.println("person1 Wins");
-		}
+		    count2++;
+		}                                                                                                                                                                                                                                      
 		else if(p1==p2){
-		    System.out.println("Tie");
 		}
 		else{
-		    System.out.println("Invalis Input");
+		    System.out.println("Invalid Input");
 		}
+		if(count1>count2){
+		    System.out.println("person1 is win");
+		}
+		else if(count2>count1){
+		    System.out.println("person2 is win");
+		}
+		else{
+		    System.out.println("Tie");
+		}
+	}
 	}
 }
